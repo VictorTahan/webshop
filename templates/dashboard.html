@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Garçom</title>
+</head>
+<body>       
+    <div id="voltarFuncionalidades"><-Voltar</div>
+    <div class="btnFlutuante" id="funcionalidades" style="background-color: grey; bottom: 65px; left: 65px; visibility: visible;">
+        <img src="/static/images/trayicon.png" alt="Mais opções" style="width: 50%;">
+    </div>
+    <div class="btnFlutuante" id="addProduto" style="background-color: rgb(0, 0, 255); bottom: 260px; left: 90px;">
+        <img src="/static/images/plusicon.png" alt="Adicionar produto" style="width: 30%;">
+    </div>
+    <div class="btnFlutuante" id="startLive" style="background-color: green; bottom: 180px; left: 90px;">
+        <img src="/static/images/playicon.png" alt="Iniciar live" style="width: 30%;">
+    </div>
+    <div class="btnFlutuante" id="leave" style="background-color: red; bottom: 100px; left: 90px;">
+        <a href="{{ url_for('logout') }}"><img src="/static/images/exiticon.png" alt="Sair" style="width: 50%;"></a>
+    </div>
+    <div class="container" style="width: 75%;">
+        <div style="display: flex; flex-direction: row; font-size: 20px; font-family: Arial, Helvetica, sans-serif; color: white; gap: 7px; align-items: center;">
+            <label for="codSearch">Cód:</label>
+            <input type="text" name="codSearch" id="codSearch"> 
+            <label for="prodSearch">Produto:</label>
+            <input type="text" name="prodSearch" id="prodSearch" style="width: 60%;">
+            <button class="btnsCRUD" id="duplicarItem" onclick="duplicarItemSelecionado()">Duplicar item</button>
+            <button class="btnsCRUD" id="editarItem" onclick="editarItemSelecionado()">Editar item</button>
+            <button class="btnsCRUD" id="removerItem" onclick="telaRemocao()">Remover item</button>
+        </div>
+        <br>
+        <div class="table_area">
+            <table>
+                <tr>
+                    <th>Cód</th>
+                    <th>SKU</th>
+                    <th>Nome do produto</th>
+                    <th>Variação</th>
+                    <th>Chave</th>
+                    <th>Valor</th>
+                    <th>Qtd</th>    
+                    <th>Categoria</th>
+                </tr>
+                <tbody id="tbodyProdutos">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container" id="prodAddContainer" style="width: 30%; position: fixed; background-color: black; visibility: hidden;">
+        <form id="formProdutos" method="POST" autocomplete="off" style="display: grid; grid-template-columns: 1fr 1fr;">
+            <label for="cod">Código:</label>
+            <input type="text" name="cod" id="cod">
+            <label for="sku">SKU:</label>
+            <input type="text" name="sku" id="sku">
+            <label for="prodName">Nome do produto:</label>
+            <input type="text" name="prodName" id="prodName">
+            <label for="variacao">Variação:</label>
+            <input type="text" name="variacao" id="variacao">
+            <label for="chave">Palavra-chave:</label>
+            <input type="text" name="chave" id="chave">
+            <label for="valor">Valor:</label>
+            <input type="text" name="valor" id="valor">
+            <label for="qtd">Quantidade:</label>
+            <input type="text" name="qtd" id="qtd">
+            <label for="categoria">Categoria:</label>
+            <input type="text" name="categoria" id="categoria">
+            <button class="btnCancelar" type="button">Cancelar</button>
+            <button type="submit">Salvar Produto</button>
+        </form>
+    </div>
+    <div class="container" id="certezaRemover" style="width: 30%; position: fixed; background-color: black; visibility: hidden;">
+        <h1 style="color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif;">Tem certeza que quer remover este item?</h1>
+        <div id="itemARemover"></div>
+        <button style="width: 50%;" onclick="removerItemSelecionado()">SIM</button>
+        <button style="width: 49%;" onmouseover="this.style.background = 'red'"  onmouseout="this.style.background = 'rgba(240, 248, 255, 0)'" onclick="this.parentElement.style.visibility='hidden'">Não</button>
+    </div>
+</body>
+<script src="/static/script.js"></script>
+</html>

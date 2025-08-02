@@ -1,0 +1,127 @@
+body{
+    position: relative;
+    background-color: rgb(190, 217, 224);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.container{
+    position: absolute;
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0.445);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 15px;
+    transform: translateY(-50%);
+    top: 50%;
+    gap: 7px;
+}
+
+form{
+    gap: 7px;
+}
+
+form,#formContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+input{
+    height: 20px;
+}
+
+button{
+    border: solid white 1px;
+    border-radius: 8px;
+    background-color: rgba(240, 248, 255, 0);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: blue;
+}
+
+#voltar:hover{
+    cursor: pointer;
+    background-color: red;
+}
+
+th,tr{
+    font-family: Arial, Helvetica, sans-serif;
+    border: solid 1px;
+}
+
+#tbodyProdutos tr{
+    cursor: pointer;
+}
+.table_area{
+    background-color: white;
+    height: 400px;
+    overflow-y: auto;
+}
+
+table{
+    width: 100%;
+    background-color: #e2e2e2;
+    border: solid 1px;
+    border-collapse: collapse;
+}
+
+.btnFlutuante{
+    position: fixed;
+    z-index: 1000;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    visibility: hidden;
+    gap:7px;
+}
+
+#voltarFuncionalidades{
+    cursor: pointer;
+    position: fixed;
+    z-index: 1000;
+    border-radius: 25px;
+    width: 70px;
+    height: 20px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    visibility: hidden;
+    bottom: 70px;
+    left: 55px;
+    background-color: gray;
+}
+
+.btnCancelar:hover{
+    background-color: red;
+}
+
+.btnsCRUD{
+    visibility: hidden;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Garçom - Cadastre-se</title>
+</head>
+<body>
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1 style="font-size: 30px; font-family: Arial, Helvetica, sans-serif; color: white;">Registre-se:</h1>
+        <form id="registerForm" action="/registrar" method="POST">
+            <label for="username">Nome:</label>
+            <input type="text" name="username" id="username">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="user_mail@email.com">
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="senha">
+            <button type="submit" style="width: 100%;">Registrar</button>
+        </form>
+        <button id="voltar" style="width: 65%;">Voltar</button>
+        <p style="font-size: 10px; font-family: Arial, Helvetica, sans-serif; color: white;">Criado por: Victor Tahan Rocha</p>
+    </div>
+</body>
+<script src="/static/logineregistro.js"></script>
+</html>
