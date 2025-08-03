@@ -10,7 +10,7 @@ import os
 from jwt.exceptions import ExpiredSignatureError, InvalidTokenError
 
 load_dotenv()
-JWT_TOKEN_KEY = os.getenv("JWS_TOKEN_KEY")
+JWT_TOKEN_KEY = os.getenv("JWT_TOKEN_KEY")
 
 app = Flask(__name__)
 app.config.from_object(Config)
